@@ -4,6 +4,7 @@ const desligado = document.getElementById('desligado')
 const vermelho = document.getElementById('vermelho')
 const amarelo = document.getElementById('amarelo')
 const verde = document.getElementById('verde')
+const buttonDesligado = document.getElementById('buttonDesligado')
 const automatico = document.getElementById('automatico')
 let idAutomatizar = null
 
@@ -18,6 +19,10 @@ const ligarAmarelo = () => {
 
 const ligarVerde = () => {
     desligado.src = './img/verde.png'
+}
+const desligarSemaforo = () => {
+    desligado.src = './img/desligado.png'
+    clearInterval(idAutomatizar)
 }
 
 // Estado do semáforo 
@@ -65,3 +70,4 @@ vermelho.addEventListener('click', ligarVermelho)
 amarelo.addEventListener('click', ligarAmarelo)
 verde.addEventListener('click', ligarVerde)
 automatico.addEventListener('click', automatizarSemaforo)
+buttonDesligado.addEventListener('click', desligarSemaforo)
